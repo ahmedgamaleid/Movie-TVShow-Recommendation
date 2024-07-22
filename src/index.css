@@ -1,0 +1,195 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap'); */
+
+/* Body styles */
+body {
+  background-color: #131722 !important;
+  color: white !important;
+  font-family: "Comfortaa", sans-serif !important;}
+
+/* Custom class 'test' */
+.bbb{
+  background-color: #131722 !important;
+  color: white !important;
+  
+}
+.test {
+  font-family: "Monoton", sans-serif !important; /* Adjusting font family for .test class */
+  font-weight: 400; /* Adjusting font weight */
+  font-style: normal; /* Adjusting font style */
+}
+
+/* Slick slider slide styles */
+.slick-slide {
+  margin-right: 20px; /* Adjust the right margin to increase/decrease distance between slides */
+}
+
+/* Full-width image styles */
+.imagefull {
+  position: relative;
+  height: 75vh; /* Setting a fixed height for full-width images */
+}
+
+.img-fluid {
+  width: 80%;
+  height: 80%; /* Ensuring the image covers the entire div */
+  object-fit: cover; /* Ensures the image covers the entire div */
+  border-radius: 8px; /* Adjusting border radius for rounded corners */
+  transition: transform 0.3s ease; /* Adding transition for smooth zoom effect */
+}
+
+.contentimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 1),
+    rgba(29, 29, 29, 0.9),
+    rgba(53, 52, 52, 0.7),
+    rgba(104, 103, 103, 0.5),
+    rgba(171, 168, 168, 0.2), /* Gray color on the left */
+    rgba(255, 255, 255, 0.1) /* Transparent on the right */
+  );  
+  color: white; /* Optional: To ensure text is visible */
+  padding: 30px; /* Adjusting padding */
+  border-radius: 8px; /* Optional: To match the rounded corners of the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.rounded-2 {
+  border-radius: 8px; /* Adjusting border radius for rounded corners */
+}
+
+/* Additional styles */
+.underlinee {
+  border: 1px solid white;
+  padding: 5px; /* Adjusting padding */
+}
+
+.underline {
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.iconedet {
+  color: #131722;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+}
+
+.nonlink {
+  text-decoration: none;
+  color: #131722;
+}
+
+.recommendation-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.recommendation-card img {
+  width: 100%; /* Ensuring image covers entire container */
+  height: auto; /* Ensuring aspect ratio is maintained */
+  transition: transform 0.3s ease; /* Adding transition for smooth zoom effect */
+}
+
+.recommendation-card:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.recommendation-card:hover .card-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+
+.movieser {
+  height: 400px;
+  position: relative;
+  overflow: hidden; /* Ensures that any overflow is hidden */
+  
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1; /* Ensure it is above the image but below the form */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+form {
+  z-index: 2; /* Ensure it is above the overlay */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.scrolltop {
+  animation: bounce 2s infinite;
+}
+/* Ensure the card container has the correct background color */
+/* Ensure the card container has the correct background color */
+.mmmov {
+  background-color: #131722; /* Dark background for the entire card */
+  border: none; /* Remove any default border */
+}
+
+/* Style the movie title */
+.movie-title {
+  color: rgb(250, 250, 250); /* Light text color for contrast */
+  background-color: #131722; /* Match background color */
+  padding: 0.5rem; /* Add padding for better visibility */
+  border-radius: 0.25rem; /* Rounded corners for the title background */
+}
+
+/* Ensure images inside the card have rounded corners */
+.card img {
+  border-radius: 0.25rem; /* Rounded corners for images */
+}
+
+/* Remove borders from the card */
+.no-border {
+  border: none; /* Remove the default border */
+}
+
+
+.color33{
+
+/* border: 2px solid #ff0000; */
+  border-radius: 0 40% 40% 40%;
+  padding: 4%;
+}
