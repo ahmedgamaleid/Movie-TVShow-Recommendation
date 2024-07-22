@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Movie and TV Show Recommendation App
+
+Discover your next favorite movie or TV show with ease! Our app uses advanced algorithms to suggest content tailored to your tastes. Whether you're in the mood for action, drama, or the latest series, we have you covered. Discover, save, and enjoy great recommendations today!
+
 ## Available Scripts
 
 In the project directory, you can run:
