@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ahmedgamaleid.github.io/Movie-TVShow-Recommendation",
   "name": "app1",
   "version": "0.1.0",
   "private": true,
@@ -13,26 +14,26 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.2",
-    "dom": "^0.0.3",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.3.17",
     "joi": "^17.12.2",
     "jwt-decode": "^4.0.0",
-    "ldrs": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading": "^2.0.3",
-    "react-router": "^6.24.0",
     "react-router-dom": "^6.22.1",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.10",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+     "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
