@@ -9,7 +9,7 @@ import Register from './Components/Register'
 import Movies from './Components/Movies';
 import TvShow from './Components/TvShow';
 import People from './Components/Poeple'; // Corrected spelling
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter,createHashRouter } from 'react-router-dom';
 import ReactLoading from "react-loading";
 import Moviesdetails from './Components/Moviesdetails';
 import Tvdetails from './Components/Tvdetails';
@@ -32,7 +32,7 @@ function App() {
     localStorage.setItem("favorites", JSON.stringify(movies));
     setFavoriteMovies(movies);
   };
-  const routes = createBrowserRouter([
+  const routes = createHashRouter([
     {
       path: '/',
       element: <Layout username={username} islogin={islogin} setislogin={setislogin}/>,

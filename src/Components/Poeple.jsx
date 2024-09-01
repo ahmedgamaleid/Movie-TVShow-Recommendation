@@ -42,7 +42,7 @@ const People = () => {
             `}
           </style>
           <h1 className="test py-2">Trending</h1>
-          <h1 className="test py-2">Person</h1>
+          <h1 className="test py-2"> <spam style={{ color: 'red' }}>Person</spam></h1>
           <h1 className="test py-2">to Watch Now</h1>
         </div>
         {personContainer.slice(0, 10).map((person) => (

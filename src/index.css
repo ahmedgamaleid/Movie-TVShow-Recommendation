@@ -1,3 +1,4 @@
+
 /* Importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
@@ -159,8 +160,9 @@ form {
 }
 
 .scrolltop {
-  animation: bounce 2s infinite;
-}
+    animation: bounce 2s infinite;
+    z-index: 1000; /* Adjust this value as needed */
+  }
 /* Ensure the card container has the correct background color */
 /* Ensure the card container has the correct background color */
 .mmmov {

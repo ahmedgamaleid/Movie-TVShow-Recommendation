@@ -130,7 +130,12 @@ const Tvdetails = () => {
 
       {/* Recommendations section */}
       <div className="container my-5">
-        <h2 className="underline w-25 my-3">Recommendations</h2>
+      <style>
+                {`
+              @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Monoton&display=swap');
+            `}
+              </style>
+        <h2 className=" test underline w-25 my-3">Recommendations</h2>
         <div className="row">
           {recommendations.length === 0 ? (
             <p>No recommendations available.</p>
@@ -165,7 +170,7 @@ const Tvdetails = () => {
 
       {/* More information section */}
       <div className="container my-5">
-        <h2 className="underline w-25 my-3">Seasons</h2>
+        <h2 className=" test underline w-25 my-3">Seasons</h2>
         <div className="d-flex flex-row align-items-center mb-5">
           {/* Render posters for each season */}
           {dettvContainer.seasons &&

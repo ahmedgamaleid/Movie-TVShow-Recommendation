@@ -103,7 +103,7 @@ const FavoriteMoviesPage = () => {
     <div className='container bbb'>
       <div className='row mb-4 flex-row justify-content-around'>
         <div className='col-lg-4 d-flex flex-column text-center my-2'>
-          <div className='border p-3 rounded-2'>
+          <div className='border bbbbbb   p-3 rounded-2'>
             <h6><i className="fa-solid fa-clock"></i> Movie Time</h6>
             <hr></hr>
             <div className='row'>

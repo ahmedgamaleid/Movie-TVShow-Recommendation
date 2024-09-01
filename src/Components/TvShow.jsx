@@ -95,9 +95,9 @@ const TvShow = () => {
       value={searchQuery}
       onChange={handleSearchChange}
     />
-    <button type="submit" className="btn btn-primary">Search</button>
+    <button type="submit" className="btn text-white rounded-5 bg-danger">Search</button>
     {isSearching && (
-      <button type="button" className="btn btn-secondary ms-2" onClick={handleClearSearch}>
+      <button type="button" className="btn btn-secondary ms-2 rounded-5 bg-danger" onClick={handleClearSearch}>
         Clear
       </button>
     )}
@@ -116,7 +116,7 @@ const TvShow = () => {
           </style>
             {/* <h1 className="test">Movies <br />To<br></br> Watch Now</h1> */}
             <h1 className="test py-2">Trending</h1>
-          <h1 className="test py-2">tv</h1>
+          <h1 className="test py-2"> <spam style={{ color: 'red' }}>tv</spam></h1>
           <h1 className="test py-2">to Watch Now</h1>          </div>
 
           {tvContainer.map((tv) => (
