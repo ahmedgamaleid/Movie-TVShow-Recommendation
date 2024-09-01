@@ -13,17 +13,20 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.2",
-    "framer-motion": "^11.3.17",
+    "dom": "^0.0.3",
+    "framer-motion": "^11.2.12",
     "joi": "^17.12.2",
     "jwt-decode": "^4.0.0",
+    "ldrs": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading": "^2.0.3",
+    "react-router": "^6.24.0",
     "react-router-dom": "^6.22.1",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.2",
+    "react-typewriter-effect": "^1.1.0",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.10",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -31,7 +34,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
- 
   },
   "eslintConfig": {
     "extends": [
