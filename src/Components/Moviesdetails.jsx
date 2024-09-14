@@ -15,6 +15,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
   const [videos, setVideos] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [logo, setlogo] = useState([]);
 
   async function getdetails() {
     try {
@@ -60,12 +61,23 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
       console.error("Error fetching movie videos:", error);
     }
   }
-
+  async function fetchlogo() {
+    try {
+      let { data } = await axios.get(
+        `https://api.themoviedb.org/3/movie/${movieid}/images?api_key=deadc1edb0c5e61d6fae4833560728b9`
+      );
+      const logo = data.logos.filter((LOGO) => LOGO.iso_639_1 === "en");
+      setlogo(logo);
+    } catch (error) {
+      console.error("Error fetching movie logo:", error);
+    }
+  }
   useEffect(() => {
     getdetails();
     fetchRecommendations();
     fetchReviews();
     fetchVideos();
+    fetchlogo();
     const favoriteStatus = localStorage.getItem(`favorite_${movieid}`);
     setIsFavorite(favoriteStatus === "true");
   }, [movieid]);
@@ -151,8 +163,12 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
                     <div className="col-md-9">
                  
                       <h1 className="mb-4 text-danger">
-                        
-                        {detmovContainer.title}
+                      <img
+                        className="rounded-2 my-0 h-25 w-25"
+                        src={`https://image.tmdb.org/t/p/w500${logo[0]?.file_path}`}
+                        alt=""
+                      />
+                        {/* {detmovContainer.title} */}
                       </h1>
                       <div className="d-flex flex-row mb-3">
                         <h6>{getLimitedOverview(detmovContainer.overview)}</h6>

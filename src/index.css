@@ -195,3 +195,10 @@ form {
   border-radius: 0 40% 40% 40%;
   padding: 4%;
 }
+   
+@media (max-width: 576px) {
+  .poster {
+    max-height: 200px;
+    max-width: 100px;
+  }
+}

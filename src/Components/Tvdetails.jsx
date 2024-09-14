@@ -7,6 +7,7 @@ const Tvdetails = () => {
   const [dettvContainer, setdettvContainer] = useState({});
   const [recommendations, setRecommendations] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [logotv, setlogotv] = useState([]);
 
   useEffect(() => {
     const getDetailstv = async () => {
@@ -20,7 +21,17 @@ const Tvdetails = () => {
         // Handle error state if needed
       }
     };
-
+    async function fetchlogotv() {
+      try {
+        let { data } = await axios.get(
+          `https://api.themoviedb.org/3/tv/${tvid}/images?api_key=deadc1edb0c5e61d6fae4833560728b9`
+        );
+        const logotv = data.logos.filter((LOGO) => LOGO.iso_639_1 === "en");
+        setlogotv(logotv);
+      } catch (error) {
+        console.error("Error fetching tv logo:", error);
+      }
+    }
     const fetchRecommendations = async () => {
       try {
         let { data } = await axios.get(
@@ -33,7 +44,7 @@ const Tvdetails = () => {
         // Handle error state if needed
       }
     };
-
+    fetchlogotv();
     getDetailstv();
     fetchRecommendations();
   }, [tvid]);
@@ -85,34 +96,40 @@ const Tvdetails = () => {
         <div className="contentimg position-absolute">
           <div className="container">
             <div className="row">
-              <div className="col-md-3">
+              <div className="col-md-3 poster">
                 <img
-                  className="rounded-2 my-0 h-100 w-100"
+                  className="rounded-2  my-0 h-100 w-100"
                   src={`https://image.tmdb.org/t/p/w500${dettvContainer.poster_path}`}
                   alt=""
                 />
               </div>
-              <div className="col-md-9">
-                
-                <h1 className=" text-danger mb-4">{dettvContainer.name}</h1>
-                <div className="d-flex flex-row mb-3">
-                  <h6>{getLimitedOverview(dettvContainer.overview)}</h6>
-                </div>
+              <div className="col-md-9 ">
+              <img
+                        className="rounded-4 pb-3 my-4 h-25 w-25"
+                        src={`https://image.tmdb.org/t/p/w500${logotv[0]?.file_path}`}
+                        alt=""
+                      />
+                {/* <h1 className=" text-danger mb-4">{dettvContainer.name}</h1> */}
+                <div className="d-none d-sm-flex flex-row mb-3">
+  <h6>{getLimitedOverview(dettvContainer.overview)}</h6>
+</div>
+
                 <div className="d-flex flex-row mb-3">
                   <p className="mx-3">
                     {getYear(dettvContainer.first_air_date)}
                   </p>
                   <p><span className="p-1 rounded-2" style={{ color: "black", backgroundColor: "yellow" }}>IMDB</span> {dettvContainer.vote_average}</p>
                 </div>
-                <div className="d-flex flex-row mb-4">
-                  {dettvContainer.genres &&
-                    dettvContainer.genres.map((genre) => (
-                      <p className="mx-3  px-4 underlinee rounded-5 " key={genre.id}>
-                        {genre.name}
-                      </p>
-                    ))}
-                </div>
-                <div className="iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
+                <div className="d-none d-sm-flex flex-row mb-4">
+  {dettvContainer.genres &&
+    dettvContainer.genres.map((genre) => (
+      <p className="mx-3 px-4 underlinee rounded-5" key={genre.id}>
+        {genre.name}
+      </p>
+    ))}
+</div>
+
+                <div className="d-none d-sm-flex iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
                   <a
                     className="nonlink"
                     href={dettvContainer.homepage}
