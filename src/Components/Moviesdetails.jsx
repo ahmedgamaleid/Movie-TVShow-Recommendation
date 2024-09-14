@@ -193,8 +193,8 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
 /> */}
                 {/* {detmovContainer.title} */}
               </h1>
-              <div className="mb-3 d-none d-sm-flex">
-                <h6 className="text-truncate" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <div className="mb-3 ">
+                <h6 className="text-truncate" style={{ overflow: '', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   {getLimitedOverview(detmovContainer.overview)}
                 </h6>
               </div>
@@ -218,7 +218,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
                 {detmovContainer.genres &&
                   detmovContainer.genres.map((genre) => (
                     <p
-                      className="me-3 px-4 rounded-5"
+                      className="mx-3 px-4 underlinee rounded-5"
                       key={genre.id}
                     >
                       {genre.name}

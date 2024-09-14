@@ -100,63 +100,82 @@ const Tvdetails = () => {
 
 
 
-      <div className="imagefull position-relative">
-        <img
-          className="img-fluid rounded-2 h-100 w-100"
-          src={`https://image.tmdb.org/t/p/w500${dettvContainer.backdrop_path}`}
-          alt=""
-        />
-        <div className="contentimg position-absolute">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-3 poster">
-                <img
-                  className="rounded-2  my-0 h-100 w-100"
-                  src={`https://image.tmdb.org/t/p/w500${dettvContainer.poster_path}`}
-                  alt=""
-                />
-              </div>
-              <div className="col-md-9 ">
+<div className="row">
+        <div className="col-12 over-view">
+          <div className="imagefull position-relative vh-100">
             <img
-  className="rounded-4 pb-1  img-fluid"
-  src={`https://image.tmdb.org/t/p/w500${logotv[0]?.file_path}`}
-  alt=""
-  style={{
-    width: '40%',
-    height: '40%',
-    maxWidth: '100%',
-  }}
-/>
-
-                {/* <h1 className=" text-danger mb-4">{dettvContainer.name}</h1> */}
-                <div className="d-none d-sm-flex flex-row mb-3">
-  <h6>{getLimitedOverview(dettvContainer.overview)}</h6>
-</div>
-
-                <div className="d-flex flex-row mb-3">
-                  <p className="mx-3">
-                    {getYear(dettvContainer.first_air_date)}
-                  </p>
-                  <p><span className="p-1 rounded-2" style={{ color: "black", backgroundColor: "yellow" }}>IMDB</span> {dettvContainer.vote_average}</p>
-                </div>
-                <div className="d-none d-sm-flex flex-row mb-4">
-  {dettvContainer.genres &&
-    dettvContainer.genres.map((genre) => (
-      <p className="mx-3 px-4 underlinee rounded-5" key={genre.id}>
-        {genre.name}
-      </p>
-    ))}
-</div>
-
-                <div className=" iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
-                  <a
-                    className="nonlink"
-                    href={dettvContainer.homepage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="p-4 fs-3 fas fa-search"></i>
-                  </a>
+              className="img-fluid rounded-2 w-100 h-100"
+              src={`https://image.tmdb.org/t/p/w500${dettvContainer.backdrop_path}`}
+              alt=""
+            />
+            <div className="contentimg position-absolute w-100">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-3 mb-3">
+                    <img
+                      className="rounded-2 img-fluid my-0 h-100 w-100"
+                      src={`https://image.tmdb.org/t/p/w500${dettvContainer.poster_path}`}
+                      alt=""
+                    />
+                  </div>
+                  <div className="col-md-9">
+                    <h1 className="mb-4 text-danger">
+                      <img
+                        className="rounded-4 pb-1 img-fluid"
+                        src={`https://image.tmdb.org/t/p/w500${logotv[0]?.file_path}`}
+                        alt=""
+                        style={{
+                          width: '40%',
+                          height: 'auto',
+                          maxWidth: '100%',
+                        }}
+                      />
+                      {/* {dettvContainer.name} */}
+                    </h1>
+                    <div className="mb-3">
+                      <h6 className="text-truncate" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {getLimitedOverview(dettvContainer.overview)}
+                      </h6>
+                    </div>
+                    <div className="d-flex flex-wrap mb-3">
+                      <p className="me-3">
+                        {getYear(dettvContainer.first_air_date)}
+                      </p>
+                      <p>
+                        <span
+                          className="p-1 rounded-2"
+                          style={{ color: "black", backgroundColor: "yellow" }}
+                        >
+                          IMDB
+                        </span>{" "}
+                        {dettvContainer.vote_average
+                          ? dettvContainer.vote_average.toFixed(1)
+                          : ""}
+                      </p>
+                    </div>
+                    <div className="d-none d-sm-flex flex-wrap mb-4">
+                      {dettvContainer.genres &&
+                        dettvContainer.genres.map((genre) => (
+                          <p
+                            className="mx-3 px-4 underlinee rounded-5"
+                            key={genre.id}
+                          >
+                            {genre.name}
+                          </p>
+                        ))}
+                    </div>
+                    <div className="d-none d-sm-flex iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
+                      <a
+                        className="nonlink"
+                        href={dettvContainer.homepage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="p-4 fs-3 fas fa-search"></i>
+                      </a>
+                    </div>
+                   
+                  </div>
                 </div>
               </div>
             </div>
