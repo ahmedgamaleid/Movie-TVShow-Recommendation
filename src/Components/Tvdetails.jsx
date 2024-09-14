@@ -117,11 +117,17 @@ const Tvdetails = () => {
                 />
               </div>
               <div className="col-md-9 ">
-              <img
-                        className="rounded-4 pb-3 my-4 h-25 w-25"
-                        src={`https://image.tmdb.org/t/p/w500${logotv[0]?.file_path}`}
-                        alt=""
-                      />
+            <img
+  className="rounded-4 pb-1  img-fluid"
+  src={`https://image.tmdb.org/t/p/w500${logotv[0]?.file_path}`}
+  alt=""
+  style={{
+    width: '40%',
+    height: '40%',
+    maxWidth: '100%',
+  }}
+/>
+
                 {/* <h1 className=" text-danger mb-4">{dettvContainer.name}</h1> */}
                 <div className="d-none d-sm-flex flex-row mb-3">
   <h6>{getLimitedOverview(dettvContainer.overview)}</h6>

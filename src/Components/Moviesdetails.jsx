@@ -172,11 +172,25 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
             <div className="col-md-9">
               <h1 className="mb-4 text-danger">
                 <img
-                  className="rounded-2 me-2 w-25 h-25"
+                  className="rounded-4 pb-1  img-fluid"
                   src={`https://image.tmdb.org/t/p/w500${logo[0]?.file_path}`}
                   alt=""
-                  style={{ width: '3rem', height: '3rem' }}
+                  style={{
+                    width: '40%',
+                    height: '40%',
+                    maxWidth: '100%',
+                  }}
                 />
+                {/*             <img
+  className="rounded-4 pb-3 my-4 img-fluid"
+  src={`https://image.tmdb.org/t/p/w500${logotv[0]?.file_path}`}
+  alt=""
+  style={{
+    width: '40%',
+    height: 'auto',
+    maxWidth: '100%',
+  }}
+/> */}
                 {/* {detmovContainer.title} */}
               </h1>
               <div className="mb-3 d-none d-sm-flex">
@@ -211,7 +225,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
                     </p>
                   ))}
               </div>
-              <div className="iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
+              <div className="d-none d-sm-flex iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
                 <a
                   className="nonlink"
                   href={detmovContainer.homepage}
