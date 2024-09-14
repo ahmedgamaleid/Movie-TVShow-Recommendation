@@ -18,10 +18,10 @@ const Navbar = (props) => {
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container-fluid">
         <a className="navbar-brand fs-4 mx-5" href="#">
-        <span className="telema-wrapper">
-  <span className="red-circle  ">T</span>
-  <span className="strikethrough">elema</span>
-</span>
+          <span className="telema-wrapper">
+            <span className="red-circle">T</span>
+            <span className="strikethrough">elema</span>
+          </span>
         </a>
         <button
           className="navbar-toggler"
@@ -53,17 +53,13 @@ const Navbar = (props) => {
                     className={({ isActive }) =>
                       isActive ? 'active nav-link text-danger' : 'nav-link'
                     }
-                    to=""
+                    to="register"
                   >
                     Register
                   </NavLink>
                 </li>
               </>
             ) : (
-              ''
-            )}
-
-            {props.islogin ? (
               <>
                 <li className="nav-item">
                   <NavLink
@@ -105,24 +101,24 @@ const Navbar = (props) => {
                     People
                   </NavLink>
                 </li>
-               
               </>
-            ) : (
-              ''
             )}
           </ul>
 
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li className="nav-item mx-2">
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? 'active nav-link text-danger ' : 'nav-link'
-                    }
-                    to="FavoriteMoviesPage"
-                  >
-<i class="fa-solid fa-bookmark"></i>                  </NavLink>
-                </li>
-            {props.islogin ? (
+            {props.islogin && (
+              <li className="nav-item mx-2">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active nav-link text-danger' : 'nav-link'
+                  }
+                  to="FavoriteMoviesPage"
+                >
+                  <i class="fa-solid fa-bookmark"></i>
+                </NavLink>
+              </li>
+            )}
+            {props.islogin && (
               <div className="dropdown">
                 <button
                   className="btn btn-secondary dropdown-toggle"
@@ -138,8 +134,6 @@ const Navbar = (props) => {
                   </li>
                 </ul>
               </div>
-            ) : (
-              ''
             )}
           </ul>
         </div>

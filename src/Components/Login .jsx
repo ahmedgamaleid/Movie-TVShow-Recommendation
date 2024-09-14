@@ -78,7 +78,7 @@ let  redirect = useNavigate();
 
      <div className='row p-4  d-flex justify-content-center align-content-center'>
       {/* <h1>Login Form</h1> */}
-      <div className='col-12  d-flex justify-content-center align-content-center'>
+      
         <form onSubmit={(e) => { e.preventDefault(); login(); }}>
     
           <label className=''>Email</label>
@@ -102,7 +102,7 @@ let  redirect = useNavigate();
         </form>
      
     
-      </div>
+      
     </div>
       
     </div>
