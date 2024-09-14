@@ -140,7 +140,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
       >
         <i className="fa-solid fa-arrow-up fs-4"></i>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid ">
         {/* Movie details section */}
         <div className="row">
           <div className="col-12">

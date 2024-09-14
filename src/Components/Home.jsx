@@ -3,9 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Import Swiper styles// Function to split text into words
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
-import 'swiper/swiper-bundle.css';
+import 'swiper/css'; // Import Swiper core styles
+import 'swiper/css/navigation'; // Import specific Swiper components styles
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 
 import 'swiper/css/scrollbar';const splitTextIntoWords = (text) => {
   return text.split(' ').map((word, index) => ({
