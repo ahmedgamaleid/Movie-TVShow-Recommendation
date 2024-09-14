@@ -18,7 +18,10 @@ const Navbar = (props) => {
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container-fluid">
         <a className="navbar-brand fs-4 mx-5" href="#">
-      <span className="strikethrough">Telema</span>
+        <span className="telema-wrapper">
+  <span className="red-circle  ">T</span>
+  <span className="strikethrough">elema</span>
+</span>
         </a>
         <button
           className="navbar-toggler"

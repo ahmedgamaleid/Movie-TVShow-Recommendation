@@ -83,9 +83,22 @@ const Tvdetails = () => {
 
   return (
     <>
-      <div className="scrolltop position-fixed position-absolute top-50 end-0 mx-2  p-2 rounded-5" onClick={scrollToTop}>
-        <i className="fa-solid fa-arrow-up fs-4"></i>
-      </div>
+   <div
+  className="scrolltop position-fixed end-0 mx-2 p-2 rounded-circle bg-danger text-white d-flex justify-content-center align-items-center"
+  onClick={scrollToTop}
+  style={{
+    width: '30px',
+    height: '30px',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+    cursor: 'pointer',
+    bottom: '20px', // Position the button 20px from the bottom of the page
+    right: '20px'   // Position the button 20px from the right edge
+  }}
+>
+  <i className="fa-solid fa-arrow-up fs-5"></i> {/* Adjusted icon size */}
+</div>
+
+
 
       <div className="imagefull position-relative">
         <img
@@ -129,7 +142,7 @@ const Tvdetails = () => {
     ))}
 </div>
 
-                <div className="d-none d-sm-flex iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
+                <div className=" iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
                   <a
                     className="nonlink"
                     href={dettvContainer.homepage}
@@ -146,7 +159,7 @@ const Tvdetails = () => {
       </div>
 
       {/* Recommendations section */}
-      <div className="container my-5">
+      <div className="container my-5 px-2">
       <style>
                 {`
               @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Monoton&display=swap');

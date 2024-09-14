@@ -135,101 +135,113 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
   return (
     <>
       <div
-        className="scrolltop position-fixed position-absolute top-50 end-0 mx-2 p-2 rounded-5"
-        onClick={scrollToTop}
-      >
-        <i className="fa-solid fa-arrow-up fs-4"></i>
-      </div>
+  className="scrolltop position-fixed end-0 mx-2 p-2 rounded-circle bg-danger text-white d-flex justify-content-center align-items-center"
+  onClick={scrollToTop}
+  style={{
+    width: '30px',
+    height: '30px',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+    cursor: 'pointer',
+    bottom: '20px', // Position the button 20px from the bottom of the page
+    right: '20px'   // Position the button 20px from the right edge
+  }}
+>
+  <i className="fa-solid fa-arrow-up fs-5"></i> {/* Adjusted icon size */}
+</div>
+
       <div className="container-fluid ">
         {/* Movie details section */}
         <div className="row">
-          <div className="col-12">
-            <div className="imagefull position-relative">
+  <div className="col-12">
+    <div className="imagefull position-relative">
+      <img
+        className="img-fluid rounded-2 w-100 h-100"
+        src={`https://image.tmdb.org/t/p/w500${detmovContainer.backdrop_path}`}
+        alt=""
+      />
+      <div className="contentimg position-absolute w-100">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 mb-3">
               <img
-                className="img-fluid rounded-2 w-100 h-100"
-                src={`https://image.tmdb.org/t/p/w500${detmovContainer.backdrop_path}`}
+                className="rounded-2 img-fluid"
+                src={`https://image.tmdb.org/t/p/w500${detmovContainer.poster_path}`}
                 alt=""
               />
-              <div className="contentimg position-absolute">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-3">
-                      <img
-                        className="rounded-2 my-0 h-100 w-100"
-                        src={`https://image.tmdb.org/t/p/w500${detmovContainer.poster_path}`}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-md-9">
-                 
-                      <h1 className="mb-4 text-danger">
-                      <img
-                        className="rounded-2 my-0 h-25 w-25"
-                        src={`https://image.tmdb.org/t/p/w500${logo[0]?.file_path}`}
-                        alt=""
-                      />
-                        {/* {detmovContainer.title} */}
-                      </h1>
-                      <div className="d-flex flex-row mb-3">
-                        <h6>{getLimitedOverview(detmovContainer.overview)}</h6>
-                      </div>
-                      <div className="d-flex flex-row mb-3">
-                        <p className="mx-3">
-                          {getYear(detmovContainer.release_date)}
-                        </p>
-                        <p>
-                          <span
-                            className="p-1 rounded-2"
-                            style={{ color: "black", backgroundColor: "yellow" }}
-                          >
-                            IMDB
-                          </span>{" "}
-                          {detmovContainer.vote_average
-                            ? detmovContainer.vote_average.toFixed(1)
-                            : ""}
-                        </p>
-                      </div>
-                      <div className="d-flex flex-row mb-4">
-                        {detmovContainer.genres &&
-                          detmovContainer.genres.map((genre) => (
-                            <p
-                              className="mx-3 px-4 rounded-5 underlinee"
-                              key={genre.id}
-                            >
-                              {genre.name}
-                            </p>
-                          ))}
-                      </div>
-                      <div className="iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
-                        <a
-                          className="nonlink"
-                          href={detmovContainer.homepage}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <i className="p-4 fs-3 fas fa-search"></i>
-                        </a>
-                      </div>
-                      <div className="favorite-icon" onClick={toggleFavorite}>
-                        <FontAwesomeIcon
-                          icon={isFavorite ? solidStar : regularStar}
-                          size="2x"
-                          style={{
-                            color: isFavorite ? "gold" : "grey",
-                            cursor: "pointer",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div className="col-md-9">
+              <h1 className="mb-4 text-danger">
+                <img
+                  className="rounded-2 me-2 w-25 h-25"
+                  src={`https://image.tmdb.org/t/p/w500${logo[0]?.file_path}`}
+                  alt=""
+                  style={{ width: '3rem', height: '3rem' }}
+                />
+                {/* {detmovContainer.title} */}
+              </h1>
+              <div className="mb-3 d-none d-sm-flex">
+                <h6 className="text-truncate" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {getLimitedOverview(detmovContainer.overview)}
+                </h6>
+              </div>
+              <div className="d-flex flex-wrap mb-3">
+                <p className="me-3">
+                  {getYear(detmovContainer.release_date)}
+                </p>
+                <p>
+                  <span
+                    className="p-1 rounded-2"
+                    style={{ color: "black", backgroundColor: "yellow" }}
+                  >
+                    IMDB
+                  </span>{" "}
+                  {detmovContainer.vote_average
+                    ? detmovContainer.vote_average.toFixed(1)
+                    : ""}
+                </p>
+              </div>
+              <div className=" d-none d-sm-flex d-flex flex-wrap mb-4">
+                {detmovContainer.genres &&
+                  detmovContainer.genres.map((genre) => (
+                    <p
+                      className="me-3 px-4 rounded-5"
+                      key={genre.id}
+                    >
+                      {genre.name}
+                    </p>
+                  ))}
+              </div>
+              <div className="iconedet my-4 rounded-circle d-flex justify-content-center align-items-center">
+                <a
+                  className="nonlink"
+                  href={detmovContainer.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="p-4 fs-3 fas fa-search"></i>
+                </a>
+              </div>
+              <div className="favorite-icon" onClick={toggleFavorite}>
+                <FontAwesomeIcon
+                  icon={isFavorite ? solidStar : regularStar}
+                  size="2x"
+                  style={{
+                    color: isFavorite ? "gold" : "grey",
+                    cursor: "pointer",
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         {/* Recommendations section */}
-        <div className="row">
+        <div className="row px-1">
           <div className="col-12">
             <div className="container my-5">
               <style>

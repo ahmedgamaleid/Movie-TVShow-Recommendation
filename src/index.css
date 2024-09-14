@@ -8,7 +8,9 @@
 body {
   background-color: #131722 !important;
   color: white !important;
-  font-family: "Comfortaa", sans-serif !important;}
+  font-family: "Comfortaa", sans-serif !important;
+overflow-x: hidden;
+}
 
 /* Custom class 'test' */
 .bbb{
@@ -201,4 +203,28 @@ form {
     max-height: 200px;
     max-width: 100px;
   }
+}
+.telema-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.red-circle {
+  display: inline-flex;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 25px; /* Smaller size */
+  height: 25px; /* Smaller size */
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px; /* Adjust as needed */
+  padding: 1rem;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  margin-left: 3px; /* Space between the circle and the text */
+  font-size: 20px; /* Adjust as needed */
 }
