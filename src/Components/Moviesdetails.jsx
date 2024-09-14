@@ -133,7 +133,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
   };
 
   return (
-    <>
+    <div div className="overview-container">
       <div
   className="scrolltop position-fixed end-0 mx-2 p-2 rounded-circle bg-danger text-white d-flex justify-content-center align-items-center"
   onClick={scrollToTop}
@@ -151,9 +151,9 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
 
       <div className="container-fluid ">
         {/* Movie details section */}
-        <div className="row">
-  <div className="col-12">
-    <div className="imagefull position-relative">
+        <div className="row  ">
+  <div className="col-12 over-view ">
+    <div className="imagefull position-relative vh-100">
       <img
         className="img-fluid rounded-2 w-100 h-100"
         src={`https://image.tmdb.org/t/p/w500${detmovContainer.backdrop_path}`}
@@ -164,7 +164,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
           <div className="row">
             <div className="col-md-3 mb-3">
               <img
-                className="rounded-2 img-fluid"
+                className="rounded-2 img-fluid   my-0 h-100 w-100"
                 src={`https://image.tmdb.org/t/p/w500${detmovContainer.poster_path}`}
                 alt=""
               />
@@ -233,7 +233,9 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
                   rel="noopener noreferrer"
                 >
                   <i className="p-4 fs-3 fas fa-search"></i>
+                  
                 </a>
+                
               </div>
               <div className="favorite-icon" onClick={toggleFavorite}>
                 <FontAwesomeIcon
@@ -382,7 +384,7 @@ const Moviesdetails = ({ favoriteMovies, updateFavoriteMovies }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

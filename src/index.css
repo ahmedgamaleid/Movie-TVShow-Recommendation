@@ -160,7 +160,7 @@ form {
     transform: translateY(-15px);
   }
 }
-
+.over-view{overflow: hidden;}
 .scrolltop {
     animation: bounce 2s infinite;
     z-index: 1000; /* Adjust this value as needed */
