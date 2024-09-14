@@ -78,21 +78,21 @@ let  redirect = useNavigate();
 
      <div className='row p-4  d-flex justify-content-center align-content-center'>
       {/* <h1>Login Form</h1> */}
-      <div className='col-6 '>
+      <div className='col-12  d-flex justify-content-center align-content-center'>
         <form onSubmit={(e) => { e.preventDefault(); login(); }}>
     
           <label className=''>Email</label>
           <input
             type='text'
             onChange={(e) => setUser({ ...user, email: e.target.value })}
-            className='form-control w-75 m-1 p-2'
+            className='form-control   '
           />
           {errordetails.length > 0 ? showalert('email') : ''}
           <label className='py-1'>Password</label>
           <input
             type='password'
             onChange={(e) => setUser({ ...user, password: e.target.value })}
-            className='form-control w-75 m-1 p-2'
+            className='form-control   '
           />
           {errordetails.length > 0 ? showalert('password') : ''}
           <button type='submit' className='btn text-bg-danger rounded-5 px-4 mt-2'>Login</button>
@@ -100,20 +100,8 @@ let  redirect = useNavigate();
           
           
         </form>
-      </div>
-      <div className='col-6'>
-      <p className='text-center mb-3'>Login with</p>
-          <div className='row d-flex flex-column justify-content-center align-content-center g-4'>
-          <button className='btn btn-light d-flex align-items-center rounded-5 px-3 w-25'>
-          <i className='fab fa-google text-danger me-2 rounded-5  '></i> Google
-        </button>
-        <button className='btn btn-light d-flex align-items-center rounded-5 px-3 w-25'>
-          <i className='fab fa-facebook text-primary me-2'></i> Facebook
-        </button>
-        <button className='btn btn-light d-flex align-items-center rounded-5 px-3 w-25'>
-          <i className='fab fa-apple text-dark me-2'></i> Apple
-        </button>
-          </div>
+     
+    
       </div>
     </div>
       

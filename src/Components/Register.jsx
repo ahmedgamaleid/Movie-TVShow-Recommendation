@@ -93,8 +93,7 @@ const Register = () => {
   // //////////////////////////////////////////////////////////////////////////////////////////
 
   return (
-    <div className="container">
-      <h1>Registration Form</h1>
+    <div className="container p-4">
       {errordetails.map((error) => {
         if (error.message.includes("pattern")) {
           error.message = "Password must start with a capital letter";
@@ -163,7 +162,7 @@ const Register = () => {
           className="form-control"
         />
         {errordetails.length > 0 ? showalert("password") : ""}
-        <button type="submit" className="btn btn-info mt-2">
+        <button type="submit" className="btn text-bg-danger rounded-5 px-4 mt-2">
           Register
         </button>{" "}
         {/* Added type="submit" */}
